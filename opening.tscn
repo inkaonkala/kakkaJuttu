@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmyd1yfa2ph62"]
+
+[ext_resource type="Texture2D" uid="uid://du0i1fja3ssbd" path="res://Assets/koirankakatus.jpg" id="1_4qvrg"]
+[ext_resource type="Script" uid="uid://dobtg05cw1ksm" path="res://opening.gd" id="1_ulneq"]
+[ext_resource type="AudioStream" uid="uid://mg2dffnfchsh" path="res://Assets/2024_fart-02.wav" id="3_gggm5"]
+[ext_resource type="Texture2D" uid="uid://dwrsiorgnj0b0" path="res://Assets/otsik.png" id="4_gggm5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ulneq")
+
+[node name="Koirankakatus" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(584.875, 344.375)
+scale = Vector2(0.306562, 0.23575)
+texture = ExtResource("1_4qvrg")
+
+[node name="FartSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gggm5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(321.5, 395)
+scale = Vector2(1.91016, 1.54688)
+texture = ExtResource("4_gggm5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 978.0
+offset_top = 205.0
+offset_right = 1146.0
+offset_bottom = 228.0
+text = "... or touch the screen"

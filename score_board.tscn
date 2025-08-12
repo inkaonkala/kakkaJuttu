@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://q3x4qfijup8u"]
+
+[ext_resource type="Script" uid="uid://qi8jwqfurdm0" path="res://score_board.gd" id="1_0cacx"]
+
+[node name="ScoreBoard" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0cacx")
+
+[node name="VBoxNames" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 448.0
+offset_bottom = 444.0
+
+[node name="Label" type="Label" parent="VBoxNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="Label2" type="Label" parent="VBoxNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="Label3" type="Label" parent="VBoxNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="Label4" type="Label" parent="VBoxNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="Label5" type="Label" parent="VBoxNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="Label6" type="Label" parent="VBoxNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="Label7" type="Label" parent="VBoxNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="Label8" type="Label" parent="VBoxNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25

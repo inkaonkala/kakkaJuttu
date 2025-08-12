@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsr0qjvqld3ht"]
+
+[ext_resource type="Script" uid="uid://bldixljey476o" path="res://police.gd" id="1_8t4tw"]
+[ext_resource type="Texture2D" uid="uid://b848no4582gqo" path="res://Assets/polis.png" id="1_cw7eu"]
+[ext_resource type="Texture2D" uid="uid://cj44eb4bo2lnl" path="res://Assets/polis2.png" id="2_8t4tw"]
+[ext_resource type="AudioStream" uid="uid://bt61a7ju5tqnr" path="res://Assets/whistle.mp3" id="4_h1ddd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1ddd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8t4tw")
+}],
+"loop": true,
+"name": &"fine",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cw7eu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Police" type="Node2D"]
+script = ExtResource("1_8t4tw")
+
+[node name="Police" type="AnimatedSprite2D" parent="."]
+z_index = 3
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_h1ddd")
+animation = &"walk"
+
+[node name="GameOverTime" type="Timer" parent="."]
+
+[node name="Whistle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_h1ddd")

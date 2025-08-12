@@ -1,0 +1,110 @@
+[gd_scene load_steps=18 format=3 uid="uid://e4xdkukm0q7n"]
+
+[ext_resource type="Script" uid="uid://havhatp860aj" path="res://play_scene.gd" id="1_0tbyp"]
+[ext_resource type="Texture2D" uid="uid://du0i1fja3ssbd" path="res://Assets/koirankakatus.jpg" id="2_1p5oe"]
+[ext_resource type="Script" uid="uid://e58h45lbsf2p" path="res://player.gd" id="3_vlmgp"]
+[ext_resource type="Texture2D" uid="uid://m4c3j4chtqng" path="res://Assets/kyykky1.png" id="4_5hyrw"]
+[ext_resource type="Texture2D" uid="uid://ckhftp3rqtrgp" path="res://Assets/kyykky2.png" id="5_mntja"]
+[ext_resource type="Texture2D" uid="uid://cb5me7ha7y1rb" path="res://Assets/kyykky3.png" id="6_bnsmh"]
+[ext_resource type="Texture2D" uid="uid://qmr8638fb7er" path="res://Assets/kyykky4.png" id="7_totdj"]
+[ext_resource type="Texture2D" uid="uid://cg0gefc0tpkys" path="res://Assets/kyykky5.png" id="8_4e3t1"]
+[ext_resource type="Texture2D" uid="uid://cqrwvmwydt2v" path="res://Assets/ukkoseisoo2.png" id="9_i36m7"]
+[ext_resource type="Texture2D" uid="uid://c3fv0lxcnnn7f" path="res://Assets/ukkoseisoo.png" id="10_dlnbv"]
+[ext_resource type="Texture2D" uid="uid://bo17mh2q1b544" path="res://Assets/zip1.png" id="11_u6cln"]
+[ext_resource type="Texture2D" uid="uid://bxr3tc1qye6oo" path="res://Assets/zip2.png" id="12_vi0nd"]
+[ext_resource type="Texture2D" uid="uid://b2bqiigfghxb0" path="res://Assets/ukkokavely1.png" id="13_tixdq"]
+[ext_resource type="Texture2D" uid="uid://cupkhw0pvhy18" path="res://Assets/ukkokavely2.png" id="14_148ay"]
+[ext_resource type="Texture2D" uid="uid://dxq6wvweek5n3" path="res://Assets/pole.png" id="15_5hyrw"]
+[ext_resource type="AudioStream" uid="uid://b5senn0lvyje3" path="res://Assets/poo.mp3" id="16_mntja"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b4dte"]
+animations = [{
+"frames": [{
+"duration": 3.8,
+"texture": ExtResource("4_5hyrw")
+}, {
+"duration": 4.5,
+"texture": ExtResource("5_mntja")
+}, {
+"duration": 4.5,
+"texture": ExtResource("6_bnsmh")
+}, {
+"duration": 4.5,
+"texture": ExtResource("7_totdj")
+}, {
+"duration": 5.11,
+"texture": ExtResource("8_4e3t1")
+}],
+"loop": false,
+"name": &"poo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i36m7")
+}, {
+"duration": 7.81,
+"texture": ExtResource("10_dlnbv")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.1,
+"texture": ExtResource("11_u6cln")
+}, {
+"duration": 3.41,
+"texture": ExtResource("12_vi0nd")
+}],
+"loop": false,
+"name": &"unzip",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_tixdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_148ay")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="PlayScene" type="Node2D"]
+script = ExtResource("1_0tbyp")
+
+[node name="Koirankakatus" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(584.875, 344.375)
+scale = Vector2(0.306562, 0.23575)
+texture = ExtResource("2_1p5oe")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("3_vlmgp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(1329, 360)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_b4dte")
+animation = &"poo"
+
+[node name="PooSound" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("16_mntja")
+volume_db = 6.667
+
+[node name="Pole" type="Sprite2D" parent="."]
+z_index = 9
+position = Vector2(667, 410)
+scale = Vector2(0.47357, 0.340171)
+texture = ExtResource("15_5hyrw")
+
+[node name="Points" type="Label" parent="."]
+offset_left = 44.0
+offset_top = 31.0
+offset_right = 97.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 62
+text = "0"
